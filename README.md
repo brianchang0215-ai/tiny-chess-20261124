@@ -14,6 +14,10 @@ A chess engine in at most 4,096 bytes of Python: a 0x88 board, negamax with quie
 MAKEFUN_ENV_URL=http://127.0.0.1:PORT python3 main.py
 ```
 
+## Search
+
+Iterative deepening from depth 1 to 8 under a fixed budget of 70,000 nodes per move: no clock, no unseeded randomness, so the same position always plays the same move. Quiescence search covers captures and captures that promote, and every legal reply when in check, with a one-ply extension when in check. Repetition and the fifty-move rule score as draws, and the root move is always verified against the env's legal move list before it is played.
+
 ## License
 
 MIT. See LICENSE.
